@@ -1,6 +1,6 @@
-#BLOGEYBLOG is my blogging software.
+# BLOGEYBLOG is my blogging software.
 
-##how to use it:
+## how to use it:
 
 ```
 cd blogeyBlog
@@ -9,7 +9,7 @@ go build -o blogeyBlog blogeyBlog.go
 ./blogeyBlog
 ```
 
-##Formatting blog posts
+## Formatting blog posts
 
 ```
 touch ./blogs/test.blogeyBlog
