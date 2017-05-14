@@ -1,0 +1,62 @@
+<html>
+   <head>
+      <style>
+         html * {
+            font-family: Courier !important;
+            color: #212121;
+         }
+
+         img {
+            display:flex;
+            width:700px;
+         }
+
+         .small {
+            font-size:0.7em;
+         }
+
+         body {
+            display:flex;
+            flex-direction: column;
+            100%%;
+            font-size:1.1em;
+            background-color:#EEEEEE;
+         }
+
+         h1 {
+            font-size:2em;
+         }
+
+         #post {
+            display:flex;
+            flex-direction:column;
+            margin-left:auto;
+            margin-right:auto;
+            padding-left:40px;
+            padding-right:40px;
+            padding-bottom:600px;
+            width: 65%%;
+            background-color:#F5F5F5;
+         }
+
+         #footer {
+            width:65%%;
+            margin-left:auto;
+            margin-right:auto;
+            background-color:#f5f5f5;
+            font-size:0.7em;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="post">
+         <h1>Posts</h1>
+         <span class=small>By <a href='/'>Ryan McDermott</a></span>
+         <br><br>
+         {{.Links}}
+      </div>
+      <div id="footer">
+         This blog is hosted by the software blogeyBlog.  It is open source.
+      </div>
+   </body>
+</html>
