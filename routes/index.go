@@ -8,6 +8,7 @@ import("fmt"
        "bufio"
        "bytes"
        "text/template"
+       "path/filepath"
        "strings")
 
 type ListOfLinks struct {
@@ -38,14 +39,18 @@ func Index(w http.ResponseWriter, r *http.Request) {
   linkList := ""
 
   for _,file := range files {
-    filePath := fmt.Sprintf("%v/%v", config.BlogPostDirectory,file.Name())
-    f,_ := os.Open(filePath)
-    defer f.Close()
 
-    reader := bufio.NewReader(f)
-    blogTitle,_ := reader.ReadString('\n')
+    if filepath.Ext(file.Name()) == ".blogeyBlog" {
 
-    linkList = linkList + fmt.Sprintf("<a href='/show?p=%v'>%v</a>", strings.Split(file.Name(),".")[0],blogTitle)
-   }
+      fileName := fmt.Sprintf("%v/%v", config.BlogPostDirectory,file.Name())
+      f,_ := os.Open(fileName)
+      defer f.Close()
+
+      reader := bufio.NewReader(f)
+      blogTitle,_ := reader.ReadString('\n')
+
+      linkList = linkList + fmt.Sprintf("<a href='/show?p=%v'>%v</a>", strings.Split(file.Name(),".")[0],blogTitle)
+    }
+  }
   renderLinkTemplate(w, linkList)
 }
