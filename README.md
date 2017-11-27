@@ -31,4 +31,4 @@ You can make a [link](http://blhack.me/blhack) by placing the link text between 
 
 Images can be linked in a similar way to hrefs, if they are prepended by the ! character.
 
-Good luck.
+Good luck. 
